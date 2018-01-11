@@ -8,18 +8,24 @@
 */
 body {
     background-color: #a6ffff;
-    position: relative
+    position: relative;
+    
+}
+.gameField {
+/*    display: none*/
 }
 #object {
+/*    display: inline-block;*/
     width: 100px;
     height: 100px;
     border: 3px solid red;
     background-color: #ff4141;
-    position: absolute;
+    margin: 300px auto;
     border-radius: 50%;
-    margin: auto;
+/*    margin: auto;*/
     cursor: pointer;
     transition: width 60s, height 60s;
+    position: absolute;
 /*    background-color: #af6565;*/
 }
 input {
@@ -29,16 +35,8 @@ input {
 #object:hover {
     background-color: blueviolet;
 }
-/*
-.animate {
-     background-color: mediumvioletred;
-     height: 10px;
-     width: 10px;
-     transition-property: width, height, background-color;
-     transition-duration: 2s ;
+p {
+/*    float: left;*/
+    
 }
-*/
 
-#gameData {
-    display: none;
-}

@@ -1,4 +1,5 @@
 var startGame = document.getElementById('start');
+var gameData = document.getElementById('gameData');
 var openWidth = document.documentElement.clientWidth;
 var openHeigth =document.documentElement.clientHeight;
 var object = document.getElementById('object');
@@ -36,6 +37,7 @@ function inTarget() {
 }
     
 function miss() {
+    if(pause){
     totalScore.innerHTML = '0';
     countInt = '0';
     outOfTatget.innerHTML = 'Мимо!'
@@ -44,11 +46,16 @@ function miss() {
     function func() {
         outOfTatget.innerHTML = '';
     }
+    }
     return true;    
 }
 function start() {
-    pause = true;
     startGame.style.display ='none';
+    gameData.style.display = 'block';
+    event.stopPropagation();
+//    inTargAudio.play();
+    pause = true;
+
 //    window.timerId = window.setInterval(showFigure, timeInterval);
 }
 

@@ -8,6 +8,7 @@ var speed = document.getElementById('speed');
 var outOfTatget = document.getElementById('miss');
 var missAudio = document.getElementById('missAudio');
 var inTargAudio = document.getElementById('inTargAudio');
+var innerCircle = document.getElementById('innerCircle');
 var pause = false;
 var timeInterval = 2500;
 var level = document.getElementById('level');
@@ -27,17 +28,26 @@ function inTarget() {
     showFigure();
     window.timerId = window.setInterval(showFigure, timeInterval);     //снова запускаю
     inTargAudio.play();
-    if(totalScore.innerHTML % 5 === 0) {
+    if(totalScore.innerHTML % 5 === 0 && level.innerHTML > 0 && level.innerHTML < 10) {
         speed.innerHTML++;
         level.innerHTML++;
         timeInterval -= 100;
         object.addEventListener('click', change);
+    }
+    if(totalScore.innerHTML % 5 === 0 && level.innerHTML >= 10) {
+          speed.innerHTML++;
+          level.innerHTML++;
+          changeInner();
+          innerCircle.addEventListener('click', miss);
+          
     }
   }
 }
     
 function miss() {
     if(pause){
+            event.stopPropagation();
+
     totalScore.innerHTML = '0';
     countInt = '0';
     outOfTatget.innerHTML = 'Мимо!'
@@ -55,6 +65,7 @@ function start() {
     event.stopPropagation();
 //    inTargAudio.play();
     pause = true;
+    
 
 //    window.timerId = window.setInterval(showFigure, timeInterval);
 }
@@ -88,11 +99,19 @@ function checkClick() {      // эта функция проверяет был 
     return true;    
     }
 }
-
-
 function change() {
     this.style.width = '40px';
     this.style.height = '40px';
-//    object.removeEventListener('click', change);
-//    object.addEventListener('click', newChange);
 }
+function changeInner() {
+    innerCircle.style.top = '5px';
+    innerCircle.style.left = '5px';
+    innerCircle.style.right = '5px';
+    innerCircle.style.bottom = '5px';
+}
+function doNotChangeColor() {
+    
+}
+//function stopPropagat(event){
+//    event.stopPropagation();    
+//} 

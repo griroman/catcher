@@ -1,42 +1,47 @@
-/*
-#gameField {
-    border: 1px solid #000;
-	font-size: 0;
-	margin: 0 auto;
-	position: relative;
-}
-*/
 body {
-    background-color: #a6ffff;
-    position: relative;
-    
-}
-.gameField {
-/*    display: none*/
+    background-color: #ddeaea;
 }
 #object {
-/*    display: inline-block;*/
     width: 100px;
     height: 100px;
-    border: 3px solid red;
-    background-color: #ff4141;
-    margin: 300px auto;
+    border: 2px solid #e58282;
+    background-color: #e68f8f;
+    position: absolute;
     border-radius: 50%;
-/*    margin: auto;*/
+    margin: auto;
     cursor: pointer;
     transition: width 60s, height 60s;
+    box-shadow: 2px 1px 3px 1px #777;
+}
+#innerCircle {
     position: absolute;
-/*    background-color: #af6565;*/
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    border: 1.5px solid #e58282;
+    border-radius: 50%;
+    background-color: #a6ffff;
+    transition: top 30s, left 30s, right 30s, bottom 30s;
+    box-shadow: inset 2px 1px 3px  1px #777;
 }
 input {
-    margin: 25px auto;
-    
+    width: 150px;
+    height: 80px;
+    display: block;
+    margin: 65px auto;
+    background-color: #f7e662;
+    border-radius: 5%;
+    font-size: 20px;
+    font-family: Arial;
+    box-shadow: 2px 1px 3px  1px #777;
 }
 #object:hover {
-    background-color: blueviolet;
+    background-color: #b57474;
 }
-p {
-/*    float: left;*/
-    
+#innerCircle:hover {
+    background-color: #a6ffff; 
 }
-
+#gameData {
+    display: none;
+}
